@@ -1,3 +1,4 @@
+import logo from '../assets/logo.png'; // ajusta la ruta si es necesario
 import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Badge, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Input } from "@heroui/react";
@@ -33,9 +34,7 @@ const AppNavbar: React.FC = () => {
     >
       <NavbarBrand>
         <RouterLink to="/" className="flex items-center">
-          <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center mr-2">
-            <span className="text-black font-bold">DS</span>
-          </div>
+          <img src={logo} alt="Logo Distribuidora Sur" className="h-10 w-10 rounded-full mr-2" />
           <p className="font-bold text-inherit text-xl">Distribuidora Sur</p>
         </RouterLink>
       </NavbarBrand>

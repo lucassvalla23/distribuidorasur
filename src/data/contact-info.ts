@@ -1,10 +1,10 @@
 import { ContactInfo } from "../types";
 
 export const contactInfo: ContactInfo = {
-  phone: "+54 11 1234-5678",
-  whatsapp: "+54 9 11 1234-5678",
-  email: "contacto@distribuidorasur.com",
-  address: "Av. Rivadavia 1234, Buenos Aires, Argentina",
-  instagram: "distribuidora_sur",
+  phone: "+54 9 3465 65-8349",
+  whatsapp: "+54 9 3465 65-8349",
+  email: "distrisur@gmail.com",
+  address: "Saenz Peña 330, Alcorta, Santa Fe ,Argentina",
+  instagram: "distribuidorasuralcorta",
   facebook: "DistribuidoraSurOficial"
 };
