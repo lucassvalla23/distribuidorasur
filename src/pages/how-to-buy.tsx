@@ -82,7 +82,7 @@ const HowToBuyPage: React.FC = () => {
               {steps.map((step, index) => (
                 <div key={index} className="flex gap-4">
                   <div className={`${step.color} p-3 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0`}>
-                    <Icon icon={step.icon} className="text-xl" />
+                    <Icon icon={step.icon} className="text-red-700 text-xl" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">

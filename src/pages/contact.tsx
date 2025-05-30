@@ -54,7 +54,7 @@ const ContactPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="bg-primary-100 p-2 rounded-full">
-                    <Icon icon="lucide:map-pin" className="text-primary-500 text-xl" />
+                    <Icon icon="lucide:map-pin" className="text-red-700 text-xl" />
                   </div>
                   <div>
                     <h3 className="font-medium">Dirección</h3>
@@ -64,7 +64,7 @@ const ContactPage: React.FC = () => {
                 
                 <div className="flex items-start gap-3">
                   <div className="bg-primary-100 p-2 rounded-full">
-                    <Icon icon="lucide:phone" className="text-primary-500 text-xl" />
+                    <Icon icon="lucide:phone" className="text-red-700 text-xl" />
                   </div>
                   <div>
                     <h3 className="font-medium">Teléfono</h3>
@@ -74,7 +74,7 @@ const ContactPage: React.FC = () => {
                 
                 <div className="flex items-start gap-3">
                   <div className="bg-primary-100 p-2 rounded-full">
-                    <Icon icon="lucide:smartphone" className="text-primary-500 text-xl" />
+                    <Icon icon="lucide:smartphone" className="text-red-700 text-xl" />
                   </div>
                   <div>
                     <h3 className="font-medium">WhatsApp</h3>
@@ -93,7 +93,7 @@ const ContactPage: React.FC = () => {
                 
                 <div className="flex items-start gap-3">
                   <div className="bg-primary-100 p-2 rounded-full">
-                    <Icon icon="lucide:mail" className="text-primary-500 text-xl" />
+                    <Icon icon="lucide:mail" className="text-red-700 text-xl" />
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
