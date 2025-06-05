@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfajores - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+     <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+    <main>
+        <!-- Sección de Alfajores -->
+        <section class="productos">
+            <div class="lista-productos">
+                <!-- Alfajor 1 -->
+                <div class="producto">
+                    <img src="img/alfajor-guaymallen.jpeg" alt="Alfajor Guaymallén Triple">
+                    <h3>Alfajor Guaymallén Triple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-guaymallen">Tipo:</label>
+                            <select id="tipo-alfajor-guaymallen" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra" data-stock="10">
+                            <option value="unidad" data-precio="420">Unidad - $420</option>
+                            <option value="caja" data-precio="10080">Caja (24 unidades) - $10,080</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Guaymallén Triple">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 2 -->
+                <div class="producto">
+                    <img src="img/alfajor-fantasio.jpeg" alt="Alfajor Fantasio Triple">
+                    <h3>Alfajor Fantasio Triple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-fantasio">Tipo:</label>
+                            <select id="tipo-alfajor-fantasio" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="330">Unidad - $330</option>
+                            <option value="caja" data-precio="7920">Caja (24 unidades) - $7,920</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Fantasio Triple">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 3 -->
+                <div class="producto">
+                    <img src="img/alfajor-fantoche.jpeg" alt="Alfajor Fantoche Triple">
+                    <h3>Alfajor Fantoche Triple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-fantoche">Tipo:</label>
+                            <select id="tipo-alfajor-fantoche" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="650">Unidad - $660</option>
+                            <option value="caja" data-precio="7800">Caja (12 unidades) - $7,920</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Fantoche Triple">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Alfajor 3 -->
+                <div class="producto">
+                    <img src="img/alfajor fantoche elixir.jpeg" alt="Alfajor Fantoche Elixir">
+                    <h3>Alfajor Fantoche Elixir</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-fantoche">Tipo:</label>
+                            <select id="tipo-alfajor-fantoche" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="810">Unidad - $810</option>
+                            <option value="caja" data-precio="9720">Caja (12 unidades) - $9,720</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Fantoche Elixir">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 4 -->
+                <div class="producto">
+                    <img src="img/alfajor-guliver.jpeg" alt="Alfajor Gulliver Triple">
+                    <h3>Alfajor Gulliver Triple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-gulliver">Tipo:</label>
+                            <select id="tipo-alfajor-gulliver" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="270">Unidad - $270</option>
+                            <option value="caja" data-precio="6480">Caja (24 unidades) - $6,480</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Gulliver Triple">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 5 -->
+                <div class="producto">
+                    <img src="img/alfajor-rasta.jpeg" alt="Alfajor Rasta">
+                    <h3>Alfajor Rasta</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-rasta">Tipo:</label>
+                            <select id="tipo-alfajor-rasta" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="1050">Unidad - $1,050</option>
+                            <option value="caja" data-precio="18900">Caja (18 unidades) - $18,900</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Rasta">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 6 -->
+                <div class="producto">
+                    <img src="img/alfajor-genio.jpeg" alt="Alfajor Genio Triple">
+                    <h3>Alfajor Genio Triple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-genio">Tipo:</label>
+                            <select id="tipo-alfajor-genio" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="285">Unidad - $285</option>
+                            <option value="caja" data-precio="6840">Caja (24 unidades) - $6,840</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Genio Triple" disabled>
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Sin stock
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 7 -->
+                <div class="producto">
+                    <img src="img/alfajor-hamlet.jpeg" alt="Alfajor Hamlet">
+                    <h3>Alfajor Hamlet</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (chocomaní o dulce de leche) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-hamlet">Tipo:</label>
+                            <select id="tipo-alfajor-hamlet" class="opcion-tipo">
+                                <option value="Chocomaní">Chocomaní</option>
+                                <option value="Dulce De Leche">Dulce De Leche</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="250">Unidad - $250</option>
+                            <option value="caja" data-precio="6000">Caja (24 unidades) - $6,000</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Hamlet" disabled>
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Sin stock
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alfajor 8 -->
+                <div class="producto">
+                    <img src="img/alfajor-fantasio-simple.jpeg" alt="Alfajor Fantasio Simple">
+                    <h3>Alfajor Fantasio Simple</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-fantasio-simple">Tipo:</label>
+                            <select id="tipo-alfajor-fantasio-simple" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="199">Unidad - $330</option>
+                            <option value="caja" data-precio="7164">Caja (36 unidades) - $7,920</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Alfajor Fantasio Simple">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                        <!-- Alfajor 9 -->
+                <div class="producto">
+                    <img src="img/alfajor don fantasio premium.jpeg" alt="Alfajor Don Fantasio Premium">
+                    <h3>Alfajor Don Fantasio Premium</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="tipo-alfajor-don-fantasio-premium">Tipo:</label>
+                            <select id="tipo-alfajor-don-fantasio-premium" class="opcion-tipo">
+                                <option value="negro">Negro</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="580">Unidad - $580</option>
+                            <option value="caja" data-precio="6960">Caja (12 unidades) - $6,960</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Alfajor Don Fantasio Premium">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+        </section>
+    </main>
+     <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <!-- Carrito de compras -->
+   <div id="carrito" class="carrito oculto">
+    <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+    <div id="pago-mercado-pago" class="pago-mercado-pago">
+        <button id="boton-pagar">
+            <i class="fas fa-wallet"></i> Pagar con Mercado Pago 
+        </button>
+        <button id="enviar-whatsapp" class="boton-whatsapp">
+            <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+        </button>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

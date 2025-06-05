@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicles - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+      <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+     <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+        <main>
+            <!-- Sección de Chicles -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Chicle 1 -->
+                    <div class="producto">
+                        <img src="img/chicle fierita menta.jpeg" alt="Chicle Fierita Menta">
+                        <h3>Chicle Fierita Menta</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="caja" data-precio="2650">Caja - $2,650</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chicle Fierita Menta">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Chicle 2 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita banana.jpeg" alt="Chicle Fierita Banana">
+                                <h3>Chicle Fierita Banana</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2650">Caja - $2,650</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Banana">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                             <!-- Chicle 3 -->
+                             <div class="producto">
+                                <img src="img/chicle fierita frutilla.jpeg" alt="Chicle Fierita Frutilla">
+                                <h3>Chicle Fierita Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2650">Unidad - $2,650</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Fierita">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 4 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita tutti frutti.jpeg" alt="Chicle Fierita Tutti Frutti">
+                                <h3>Chicle Fierita Tutti Frutti</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2650">Caja - $2,650</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Tutti Frutti">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 5 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita uva.jpeg" alt="Chicle Fierita Uva">
+                                <h3>Chicle Fierita Uva</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2650">Caja - $2,650</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Uva">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 25 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita recargado frutilla.jpeg" alt="Chicle Fierita Recargado Frutilla">
+                                <h3>Chicle Fierita Recargado Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2750">Caja - $2,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Recargado Frutilla">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 25 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita recargado tutti frutti.jpeg" alt="Chicle Fierita Recargado Tutti Frutti">
+                                <h3>Chicle Fierita Recargado Tutti Frutti</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2750">Caja - $2,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Recargado Tutti Frutti">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 25 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita recargado banana.jpeg" alt="Chicle Fierita Recargado Banana">
+                                <h3>Chicle Fierita Recargado Banana</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2750">Caja - $2,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Recargado Banana">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 25 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita recargado menta.jpeg" alt="Chicle Fierita Recargado Menta">
+                                <h3>Chicle Fierita Recargado Menta</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2750">Caja - $2,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Recargado Menta">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- Chicle 6 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita comefuego.jpeg" alt="Chicle Fierita Comefuego">
+                                <h3>Chicle Fierita Comefuego</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2500">Caja - $2,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Fuego">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 7 -->
+                            <div class="producto">
+                                <img src="img/chicle fierita comefuego plus.jpeg" alt="Chicle Fierita Comefuego Plus">
+                                <h3>Chicle Fierita Comefuego Plus</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2500">Caja - $2,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Fierita Comefuego Plus">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 8 -->
+                            <div class="producto">
+                                <img src="img/chicle tenis open (frutilla).jpeg" alt="Chicle Tenis Open Frutilla">
+                                <h3>Chicle Tenis Open Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2800">Caja - $2,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Tenis Open Frutilla">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Chicle 9 -->
+                            <div class="producto">
+                                <img src="img/chicle tenis open (naranja).jpeg" alt="Chicle Tenis Open Naranja">
+                                <h3>Chicle Tenis Open Naranja</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2800">Caja - $2,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Tenis Open Naranja">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 10 -->
+                            <div class="producto">
+                                <img src="img/chicle tenis open (18 unidades).jpeg" alt="Chicle Tenis Open Tira Frutilla (18 unidades)">
+                                <h3>Chicle Tenis Open Tira Frutilla (18 unidades)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="5400">Caja - $5,400</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Tenis Open Tira Frutilla (18 unidades)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 11-->
+                            <div class="producto">
+                                <img src="img/chicle bubbaloo frutilla.jpeg" alt="Chicle Bubbaloo Tutti Frutti">
+                                <h3>Chicle Bubbaloo Tutti Frutti</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="5170">Caja - $5,170</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Bubbaloo Tutti Frutti">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 12 -->
+                            <div class="producto">
+                                <img src="img/chicle tnt súoero ácido.jpeg" alt="Chicle Tnt Súper Ácido">
+                                <h3>Chicle Tnt Súper Ácido</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2500">Caja - $2,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Tnt Súper Ácido">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 13 -->
+                            <div class="producto">
+                                <img src="img/chicle maestros del terror.jpeg" alt="Chicle Maestros Del Terror">
+                                <h3>Chicle Maestros Del Terror</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2600">Caja - $2,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Maestros Del Terror">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 14 -->
+                            <div class="producto">
+                                <img src="img/chicle gumballs.jpeg" alt="Chicle Open Candy Gumballs">
+                                <h3>Chicle Open Candy Gumballs</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="5400">Caja - $5,400</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Open Candy Gumballs">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 15 -->
+                            <div class="producto">
+                                <img src="img/chicle adodó tutti frutti.jpeg" alt="Chicle Adodó Tutti Frutti">
+                                <h3>Chicle Adodó Tutti Frutti</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="3570">Bolsa - $3,570</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Adodó Tutti Frutti">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 16 -->
+                            <div class="producto">
+                                <img src="img/chicle globo beldent.jpeg" alt="Chicle Beldent Globo">
+                                <h3>Chicle Beldent Globo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="9500">Caja - $10,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Beldent Globo">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Chicle 17 -->
+                            <div class="producto">
+                                <img src="img/chicle beldent mentol.jpeg" alt="Chicle Beldent Mentol">
+                                <h3>Chicle Beldent Mentol</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="9500">Caja - $9,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Beldent Mentol">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 18 -->
+                            <div class="producto">
+                                <img src="img/chicle beldent menta fuerte.jpeg" alt="Chicle Beldent Menta Fuerte">
+                                <h3>Chicle Menta Fuerte</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="9500">Caja - $9,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Beldent Menta Fuerte">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 19 -->
+                            <div class="producto">
+                                <img src="img/chicle beldent menta.jpeg" alt="Chicle Beldent Menta">
+                                <h3>Chicle Beldent Menta</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="9500">Caja - $9,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Beldent Menta">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 20 -->
+                            <div class="producto">
+                                <img src="img/chicle beldent frutilla.jpeg" alt="Chicle Beldent Frutilla">
+                                <h3>Chicle Beldent Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="9500">Caja - $9,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Beldent Frutilla">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 21 -->
+                            <div class="producto">
+                                <img src="img/chicle alka menta.jpeg" alt="Chicle Alka Menta">
+                                <h3>Chicle Alka Menta</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3450">Caja - $3,450</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Alka Menta">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 22 -->
+                            <div class="producto">
+                                <img src="img/chicle alka frutilla.jpeg" alt="Chicle Alka Frutilla">
+                                <h3>Chicle Alka Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3450">Caja - $3,450</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Alka Frutilla">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 23 -->
+                            <div class="producto">
+                                <img src="img/chicle open candy sandia.jpeg" alt="Chicle Open Candy Sandía">
+                                <h3>Chicle Open Candy Sandía</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2750">Caja - $2,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Open Candy Sandía">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 24 -->
+                            <div class="producto">
+                                <img src="img/chicle open candy sandía (18 unidades).jpeg" alt="Chicle Open Candy Tira (18 unidades)">
+                                <h3>Chicle Open Candy Tira (18 unidades)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4500">Caja - $4,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Open Candy Sandía Tira (18 unidades)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Chicle 25 -->
+                            <div class="producto">
+                                <img src="img/chicle open candy sandia tubo (1).jpeg" alt="Chicle Open Candy Pote">
+                                <h3>Chicle Open Candy Pote</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="12000">Pote - $12,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Open Candy Pote">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                             <!-- Chicle 26 -->
+                             <div class="producto">
+                                <img src="img/chicle confiteca súper ácido.jpeg" alt="Chicle Confiteca Súper Ácido">
+                                <h3>Chicle Confiteca Súper Ácido</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3900">Caja - $3,900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Chicle Confiteca Súper Ácido">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                </section>
+             </main>
+             <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <div id="pago-mercado-pago" class="pago-mercado-pago">
+            <button id="boton-pagar">
+                <i class="fas fa-wallet"></i> Pagar con Mercado Pago
+            </button>
+            <button id="enviar-whatsapp" class="boton-whatsapp">
+                <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

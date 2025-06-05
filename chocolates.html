@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolates - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+      <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+     <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+        <main>
+            <!-- Sección de Chocolates  -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Chocolate 1 -->
+                    <div class="producto">
+                        <img src="img/chocolate con maní la piñata.jpeg" alt="Chocolate Con Maní La Piñata">
+                        <h3>Chocolate Con Maní La Piñata</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="1135">Unidad - $1,135</option>
+                                <option value="caja" data-precio="23835">Caja (21 Unidades) - $23,835</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Con Maní La Piñata">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                     <!-- Chocolate 2 -->
+                     <div class="producto">
+                        <img src="img/chocolate dos corazones.jpeg" alt="Chocolate Dos Corazones">
+                        <h3>Chocolate Dos Corazones</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="1320">Unidad - $1,320</option>
+                                <option value="caja" data-precio="26400">Caja (20 Unidades) - $26,400</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Dos Corazones">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                     <!-- Chocolate 3 -->
+                     <div class="producto">
+                        <img src="img/chocolate marroc.jpeg" alt="Bocadito Marroc">
+                        <h3>Bocadito Marroc</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="745">Unidad - $745</option>
+                                <option value="caja" data-precio="44700">Caja (60 Unidades) - $44,470</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Bocadito Marroc">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                     <!-- Chocolate 3 -->
+                     <div class="producto">
+                        <img src="img/mini bocadito chocolate kooky bon.jpeg" alt="Bocadito Kooky Bon">
+                        <h3>Bocadito Kooky Bon</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="745">Unidad - $745</option>
+                                <option value="caja" data-precio="44700">Caja (60 Unidades) - $44,470</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Bocadito Kooky Bon">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                     <!-- Chocolate 4 -->
+                     <div class="producto">
+                        <img src="img/chocolate feeling.jpeg" alt="Cubanito Feeling">
+                        <h3>Cubanito Feeling</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="765">Unidad - $765</option>
+                                <option value="caja" data-precio="22950">Caja (30 Unidades) - $22,950</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Cubanito Feeling">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Chocolate 5 -->
+                    <div class="producto">
+                        <img src="img/oblea big fantoche.jpeg" alt="Oblea Big Fantoche">
+                        <h3>Oblea Big Fantoche</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="530">Unidad - $530</option>
+                                <option value="caja" data-precio="8480">Caja (16 Unidades) - $8,480</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Oblea Big Fantoche">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Chocolate 6 -->
+                    <div class="producto">
+                        <img src="img/choclate chook crispy.jpeg" alt="Chocolate Chook Crispy">
+                        <h3>Chocolate Chook Crispy</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="1420">Unidad - $1420</option>
+                                <option value="caja" data-precio="14200">Caja (10 Unidades) - $14200</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Chook Crispy">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div> 
+                    <!-- Chocolate 7 -->
+                    <div class="producto">
+                        <img src="img/chocolate chook cookies.jpeg" alt="Chocolate Chook Cookies">
+                        <h3>Chocolate Chook Cookies</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="1420">Unidad - $1420</option>
+                                <option value="caja" data-precio="14200">Caja (10 Unidades) - $14200</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Chook Cookies" disabled>
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Sin Stock
+                            </button>
+                        </div>
+                    </div> 
+                    <!-- Chocolate 8 -->
+                    <div class="producto">
+                        <img src="img/chocolate chook maní.jpeg" alt="Chocolate Chook Maní">
+                        <h3>Chocolate Chook Maní</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="1420">Unidad - $1420</option>
+                                <option value="caja" data-precio="14200">Caja (10 Unidades) - $14200</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Chook Maní">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div> 
+                    <!-- Chocolate 9 -->
+                    <div class="producto">
+                        <img src="img/chocolate full maní.jpeg" alt="Chocolate Full Maní">
+                        <h3>Chocolate Full Maní</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="2360">Unidad - $2,360</option>
+                                <option value="caja" data-precio="23600">Caja (10 Unidades) - $23,600</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Full Maní">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div> 
+                    <!-- Chocolate 10 -->
+                    <div class="producto">
+                        <img src="img/chocolate daquí.jpeg" alt="Chocolate Con Leche y Maní Daquí">
+                        <h3>Chocolate Con Leche y Maní Daquí</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="860">Unidad - $860</option>
+                                <option value="caja" data-precio="27520">Caja (32 Unidades) - $27,520</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Chocolate Con Leche y Maní Daquí">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+             <!-- Chocolate 11 -->
+             <div class="producto">
+                <img src="img/chocolate daquí 40g.jpeg" alt="Chocolate Con Leche y Maní Daquí (40g)">
+                <h3>Chocolate Con Leche y Maní Daquí (40g)</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="635">Unidad - $635</option>
+                        <option value="caja" data-precio="15240">Caja (24 Unidades) - $15,240</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Chocolate Con Leche y Maní Daquí (40g)">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 12 -->
+            <div class="producto">
+                <img src="img/chocolate zucoa.jpeg" alt="Chocolate Con Maní Zucoa (40g)">
+                <h3>Chocolate Con Maní Zucoa (40g)</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="460">Unidad - $460</option>
+                        <option value="caja" data-precio="11040">Caja (24 Unidades) - $11,040</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Chocolate Con Maní Zucoa (40g)">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 13 -->
+            <div class="producto">
+                <img src="img/chocolate misky blanco.jpeg" alt="Chocolate Blanco Misky">
+                <h3>Chocolate Blanco Misky</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="740">Unidad - $740</option>
+                        <option value="caja" data-precio="22200">Caja (30 Unidades) - $22,200</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Chocolate Blanco Misky">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 14 -->
+            <div class="producto">
+                <img src="img/chocolate misky negro.jpeg" alt="Chocolate Negro Misky">
+                <h3>Chocolate Negro Misky</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="860">Unidad - $860</option>
+                        <option value="caja" data-precio="22200">Caja (30 Unidades) - $22,200</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Chocolate Negro Misky">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 15 -->
+            <div class="producto">
+                <img src="img/Pin Nic dulce de leche.jpeg" alt="Pic Nic Dulce De Leche">
+                <h3>Pic Nic Dulce De Leche</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="285">Unidad - $285</option>
+                        <option value="caja" data-precio="11400">Caja (40 Unidades) - $11,400</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Pic Nic Dulce De Leche">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 16 -->
+            <div class="producto">
+                <img src="img/bombón smack.jpeg" alt="Bombón Smack">
+                <h3>Bombón Smack</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="caja" data-precio="4600">Caja (30 Unidades) - $4,600</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Bombón Smack">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 17 -->
+            <div class="producto">
+                <img src="img/ducream napolitano chocolate con avellana, leche y frutilla.jpeg" alt="Ducream Napolitano">
+                <h3>Ducream Napolitano</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="caja" data-precio="5270">Caja (36 Unidades) - $5,270</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Ducream Napolitano">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+            <!-- Chocolate 18 -->
+            <div class="producto">
+                <img src="img/chocolate tivis.jpeg" alt="Chocolate Tivis">
+                <h3>Chocolate Tivis</h3>
+                <div class="opciones-compra">
+                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                        <option value="unidad" data-precio="1165">Unidad - $1,165</option>
+                        <option value="caja" data-precio="23300">Caja (20 Unidades) - $23,300</option>
+                    </select>
+                    <button class="agregar-carrito" data-nombre="Chocolate Tivis">
+                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+     </main>
+              <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <div id="pago-mercado-pago" class="pago-mercado-pago">
+            <button id="boton-pagar">
+                <i class="fas fa-wallet"></i> Pagar con Mercado Pago
+            </button>
+            <button id="enviar-whatsapp" class="boton-whatsapp">
+                <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

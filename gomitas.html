@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gomitas - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+      <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+     <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+<!-- Sección de filtros -->
+<section class="filtros">
+    <h2>Filtrar por categoría</h2>
+    <div class="botones-filtro">
+        <button id="filtro-gomita">
+         Gomitas
+        </button>
+        <button id="filtro-regaliz">
+        Regaliz
+        </button>
+    </div>
+</section>
+
+<!-- Lista de productos -->
+<section class="productos">
+    <!-- Productos aquí -->
+</section>
+
+        <main>
+            <!-- Sección de Gomitas -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Gomita 1 -->
+                    <div class="producto">
+                        <img src="img/gomita misky fantasia conito.jpeg" alt="Gomita Misky Fantasía Conito (1kg)">
+                        <h3>Gomita Misky Fantasía Conito (1kg)</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="bolsa" data-precio="6760">Bolsa - $6,760</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Gomita Misky Fantasía Conito (1kg)">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Gomita 2 -->
+                            <div class="producto">
+                                <img src="img/gomita misky fantasía eucaliptus.jpeg" alt="Gomita Misky Fantasía Eucalipto (1kg)">
+                                <h3>Gomita Misky Fantasía Eucalipto (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="6760">Bolsa - $6,760</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Misky Fantasía Eucalipto (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                             <!-- Gomita 3 -->
+                             <div class="producto">
+                                <img src="img/gomita misky jelly roll frutal.jpeg" alt="Gomita Misky Jelly Roll Frutal (1kg)">
+                                <h3>Gomita Misky Jelly Roll Frutal (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="6760">Bolsa - $6,760</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Misky Jelly Roll Frutal (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 4 -->
+                            <div class="producto">
+                                <img src="img/caja gomita misky roll.jpeg" alt="Gomita Misky Roll (12u)">
+                                <h3>Gomita Misky Roll (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3300">Caja - $3,300</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Misky Roll (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 5 -->
+                            <div class="producto">
+                                <img src="img/gomita misky ácidas.jpeg" alt="Gomita Misky Ácidas (500g)">
+                                <h3>Gomita Misky Ácidas (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="5200">Bolsa - $5,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Misky Ácidas (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 6 -->
+                            <div class="producto">
+                                <img src="img/gomita docile.jpeg" alt=" Regaliz Ladrillos Docile Multicolor (500g)">
+                                <h3> Regaliz Ladrillos Docile Multicolor (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre=" Regaliz Ladrillos Docile Multicolor (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 7 -->
+                            <div class="producto">
+                                <img src="img/caja gomita billiken eucalipto.jpeg" alt="Gomita Billiken Eucalipto (12u)">
+                                <h3>Gomita Billiken Eucalipto (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3500">Caja - $3,500</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Billiken Eucalipto (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 8 -->
+                            <div class="producto">
+                                <img src="img/regaliz bulldog sandia.jpeg" alt="Regaliz Bull Dog Sandía Ácida (360g)">
+                                <h3>Regaliz Bull Dog Sandía (360g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="3800">Pote - $3,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Sandía Ácida (360g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 9 -->
+                            <div class="producto">
+                                <img src="img/regaliz bulldog.jpeg" alt="Regaliz Bull Dog Tutti Frutti Ácida (360g)">
+                                <h3>Regaliz Bull Dog Tutti Frutti Ácida (360g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="3800">Pote - $3,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Tutti Frutti Ácida (360g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Gomita 10 -->
+                            <div class="producto">
+                                <img src="img/regaliz bulldog frutilla ácida.jpeg" alt="Regaliz Bull Dog Frutilla Ácida (360g)">
+                                <h3>Regaliz Bull Dog Frutilla Ácida (360g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="3800">Pote - $3,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Frutilla Ácida (360g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 10 -->
+                            <div class="producto">
+                                <img src="img/regaliz bulldog frambuesa ácida.jpeg" alt="Regaliz Bull Dog Frambuesa Ácida (360g)">
+                                <h3>Regaliz Bull Dog Frambuesa Ácida (360g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="3800">Pote - $3,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Frambuesa Ácida (360g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 10 -->
+                            <div class="producto">
+                                <img src="img/regaliz-cinta bulldog cereza.jpeg" alt="Regaliz/Cinta Bull Dog Cereza Ácida (360g)">
+                                <h3>Regaliz/Cinta Bull Dog Cereza Ácida (360g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="3800">Pote - $3,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz/Cinta Bull Dog Cereza Ácida (360g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 11 -->
+                            <div class="producto">
+                                <img src="img/gomita billiken yogurt bolsa.jpeg" alt="Gomita Billiken Yogurt (800g)">
+                                <h3>Gomita Billiken Yogurt (800g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4200">Bolsa - $4,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Billiken Yogurt (800g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 11 -->
+                            <div class="producto">
+                                <img src="img/gomita billiken yogurt caja.jpeg" alt="Gomita Billiken Yogurt (12u)">
+                                <h3>Gomita Billiken Yogurt (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4100">Caja - $4,100</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Billiken Yogurt (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 11 -->
+                            <div class="producto">
+                                <img src="img/gomita billiken ácidas caja.jpeg" alt="Gomita Billiken Ácidas (12u)">
+                                <h3>Gomita Billiken Ácidas (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4100">Caja - $4,100</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Billiken Ácidas (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 11 -->
+                            <div class="producto">
+                                <img src="img/gomita billiken rueditas caja.jpeg" alt="Gomita Billiken Rueditas (12u)">
+                                <h3>Gomita Billiken Rueditas (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4100">Caja - $4,100</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Billiken Rueditas (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 12-->
+                            <div class="producto">
+                                <img src="img/gomita yummy sandía bolsa.jpeg" alt="Gomita Yummy Sandía (500g)">
+                                <h3>Gomita Yummy Sandía (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Sandía (500G)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 13 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy frutilla con crema bolsa.jpeg" alt="Gomita Yummy Frutilla Con Crema (500g)">
+                                <h3>Gomita Yummy Frutilla Con Crema (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Frutilla Con Crema (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 14 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy 100pies ácidas bolsa.jpeg" alt="Gomita Yummy 100 Pies Ácida (500g)">
+                                <h3>Gomita Yummy 100 Pies Ácida (500)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy 100 Pies Ácida (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 15 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy banana bolsa.jpeg" alt="Gomita Yummy Bananitas (500g)">
+                                <h3>Gomita Yummy Bananitas (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Bananitas ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 16 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy moritas bolsa.jpeg" alt="Gomita Yummy Moritas (500g)">
+                                <h3>Gomita Yummy Moritas (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Moritas (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 17 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy ositos bolsa.jpeg" alt="Gomita Yummy Ositos (500g)">
+                                <h3>Gomita Yummy Ositos (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Ositos (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 17 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy botellitas bolsa.jpeg" alt="Gomita Yummy Botellitas (500g)">
+                                <h3>Gomita Yummy Botellitas (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Botellitas (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 18 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy huevos fritos bolsa.jpeg" alt="Gomita Yummy Huevos Fritos (500g)">
+                                <h3>Gomita Yummy Huevos Fritos (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Huevos Fritos (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gomita 18 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy dientes bolsa.jpeg" alt="Gomita Yummy Dientes (500g)">
+                                <h3>Gomita Yummy Dientes (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Dientes (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gomita 19 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy ositos caja.jpeg" alt="Gomita Yummy Ositos (12u)">
+                                <h3>Gomita Yummy Ositos (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Ositos (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 20 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy frutitas caja.jpeg" alt="Gomita Yummy Frutitas (12u)">
+                                <h3>Gomita Yummy Frutitas (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Frutitas (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 21 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy moritas caja.jpeg" alt="Gomita Yummy Moritas (12u)">
+                                <h3>Gomita Yummy Moritas (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Moritas (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 22 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy botellitas caja.jpeg" alt="Gomita Yummy Botellitas (12u)">
+                                <h3>Gomita Yummy Botellitas (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Botellitas (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 23 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy dino caja.jpeg" alt="Gomita Yummy Dino (12u)">
+                                <h3>Gomita Yummy Dino (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Dino (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 24 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy pececitos caja.jpeg" alt="Gomita Yummy Pececitos (12u)">
+                                <h3>Gomita Yummy Pececitos (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Pececitos (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 25 -->
+                            <div class="producto">
+                                <img src="img/gomita yummy animalitos caja.jpeg" alt="Gomita Yummy Animalitos (12u)">
+                                <h3>Gomita Yummy Animalitos (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="4000">Caja - $4,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Yummy Animalitos (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 26 -->
+                            <div class="producto">
+                                <img src="img/regaliz mogul extreme caja.jpeg" alt="Regaliz Mogul Extreme Frutilla (620g)">
+                                <h3>Regaliz Mogul Extreme Frutilla (620g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="pote" data-precio="8800">Pote - $8,800</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Mogul Extreme Frutilla (620g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 27 -->
+                            <div class="producto">
+                                <img src="img/mogul extreme ladrillos bolsa.jpeg" alt="Regaliz Mogul Extreme Ladrillos Frutilla (500g)">
+                                <h3>Regaliz Mogul Extreme Ladrillos Frutilla (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="5750">Bolsa - $5,750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Mogul Extreme Ladrillos Frutilla (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                             <!-- Gomita 27 -->
+                             <div class="producto">
+                                <img src="img/gomita mogul conitos yogurt.jpeg" alt="Gomita Mogul Conitos Yogurt (500g)">
+                                <h3>Gomita Mogul Conitos Yogurt (500g)</h3>
+                                <div class="opciones-compra"> 
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4200">Bolsa - $4,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Mogul Conitos Yogurt (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 27 -->
+                            <div class="producto">
+                                <img src="img/gomita mogul dientitos.jpeg" alt="Gomita Mogul Dientes (500g)">
+                                <h3>Gomita Mogul Dientes (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="5550">Bolsa - $5,700</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Mogul Dientes (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 28 -->
+                            <div class="producto">
+                                <img src="img/regaliz billiiken bull dog ácido tutti frutti.jpeg" alt="Regaliz Bull Dog Ácido Tutti Frutti (75g)">
+                                <h3>Regaliz Bull Dog Ácido Tutti Frutti (75g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="750">Bolsa - $750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Tutti Frutti (75g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 29 -->
+                            <div class="producto">
+                                <img src="img/regaliz billiken bull dog ácido sandía.jpeg" alt="Regaliz Bull Dog Ácido Sandía (75g)">
+                                <h3>Regaliz Bull Dog Ácido Sandía (75g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="750">Bolsa - $750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Sandía (75g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 30 -->
+                            <div class="producto">
+                                <img src="img/regaliz billiken bull dog ácido frutilla.jpeg" alt="Regaliz Bull Dog Ácido Frutilla (75g)">
+                                <h3>Regaliz Bull Dog Ácido Frutilla (75g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="750">Bolsa - $750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Frutilla (75g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 31 -->
+                            <div class="producto">
+                                <img src="img/regaliz billiken bull dog ácido frambuesa.jpeg" alt="Regaliz Bull Dog Ácido Frambuesa (75g)">
+                                <h3>Regaliz Bull Dog Ácido Frambuesa (75g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="750">Bolsa - $750</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Frambuesa (75g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 31 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog terror citrico.jpeg" alt="Regaliz Bull Dog Ácido Terror Citrico (75g)">
+                                <h3>Regaliz Bull Dog Ácido Terror Citrico (75g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="750">Bolsa - $750</option>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Terror Citrico (75g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 32 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog ácido frutilla caja.jpeg" alt="Regaliz Bull Dog Ácido Frutilla (12u)">
+                                <h3>Regaliz Bull Dog Ácido Frutilla (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2960">Caja - $2,960</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Frutilla (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 33 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog ácido tutti frutti caja.jpeg" alt="Regaliz Bull Dog Ácido Tutti Frutti (12u)">
+                                <h3>Regaliz Bull Dog Ácido Tutti Frutti (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2960">Caja - $2,960</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Tutti Frutti (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 34 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog ácido sandía caja.jpeg" alt="Regaliz Bull Dog Ácido Sandía (12u)">
+                                <h3>Regaliz Bull Dog Ácido Sandía (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2960">Caja - $2,960</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Sandía (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 35 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog ácido frambuesa caja.jpeg" alt="Regaliz Bull Dog Ácido Frambuesa (12u)">
+                                <h3>Regaliz Bull Dog Ácido Frambuesa (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2960">Caja - $2,960</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Frambuesa (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 35 -->
+                            <div class="producto">
+                                <img src="img/regaliz bull dog ácido frutilla caja.jpeg" alt="Regaliz Bull Dog Ácido Frutilla (12u)">
+                                <h3>Regaliz Bull Dog Ácido Frutilla (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="2960">Caja - $2,960</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Bull Dog Ácido Frutilla (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="producto">
+                                <img src="img/gomita bull dog huesitos caja.jpeg" alt="Gomita Bull Dog Huesitos (12u)">
+                                <h3>Gomita Bull Dog Huesitos (12u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="3940">Caja - $3,940</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Bull Dog Huesitos (12u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 36 -->
+                            <div class="producto">
+                                <img src="img/gomita docile ositos.jpeg" alt="Gomita Docile Ositos (1kg)">
+                                <h3>Gomita Docile Ositos (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="8000">Bolsa - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Docile Ositos (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 36 -->
+                            <div class="producto">
+                                <img src="img/gomita docile gelatina.jpeg" alt="Gomita Docile Mix Gelatina (1kg)">
+                                <h3>Gomita Docile Mix Gelatina (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="8000">Bolsa - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Docile Mix Gelatina (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 36 -->
+                            <div class="producto">
+                                <img src="img/gomita cerezas docile.jpeg" alt="Gomita Docile Cerezas (1kg)">
+                                <h3>Gomita Docile Cerezas (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="8000">Bolsa - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Docile Cerezas (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 36 -->
+                            <div class="producto">
+                                <img src="img/mini dientitios docile.jpeg" alt="Mini Dientitos Docile (1kg)">
+                                <h3>Mini Dientitos Docile (1kg)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="8000">Bolsa - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Mini Dientitos Docile (1kg)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 37 -->
+                            <div class="producto">
+                                <img src="img/regaliz docile multicolor.jpeg" alt="Regaliz Docile Multicolor (500g)">
+                                <h3>Regaliz Docile Multicolor (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Docile Multicolor (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 37 -->
+                            <div class="producto">
+                                <img src="img/regaliz docile arcoiris.jpeg" alt="Regaliz Docile Arocoiris (500g)">
+                                <h3>Regaliz Docile Arocoiris (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Docile Arocoiris (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 38 -->
+                            <div class="producto">
+                                <img src="img/regaliz docile frutilla.jpeg" alt="Regaliz Docile Frutilla (500g)">
+                                <h3>Regaliz Docile Frutilla (500g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Docile Frutilla (500g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Gomita 39 -->
+                            <div class="producto">
+                                <img src="img/gomita docile docigoma caja.jpeg" alt="Gomita Docile Docigoma (30u)">
+                                <h3>Gomita Docile Docigoma (30u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="6000">Caja - $6,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Docile Docigoma (30u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="producto">
+                                <img src="img/gomita gummy zone pizza.jpeg" alt="Gomita Gummi Zone Pizza (24u)">
+                                <h3>Gomita Gummi Zone Pizza (24u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="8725">Caja - $8,725</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Gummi Zone Pizza (24u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="producto">
+                                <img src="img/gomita gummi zone hamburguesa.jpeg" alt="Gomita Gummi Zone Burger (24u)">
+                                <h3>Gomita Gummi Zone Burger (24u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="5340">Caja - $5,340</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Gummi Zone Burger (24u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="producto">
+                                <img src="img/gomita gummi zone pancho.jpeg" alt="Gomita Gummi Zone Pancho (24u)">
+                                <h3>Gomita Gummi Zone Pancho (24u)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="caja" data-precio="5340">Caja - $5,340</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Gomita Gummi Zone Pancho (24u)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="producto">
+                                <img src="img/regaliz docile frutilla bolsa.jpeg" alt="Regaliz Docile Frutilla (70g)">
+                                <h3>Regaliz Docile Frutilla (70g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="bolsa" data-precio="900">Bolsa - $900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Regaliz Docile Frutilla (70g)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        <div class="producto">
+                            <img src="img/gomita redondita la piñata.jpeg" alt="Gomita La Piñata Redonditas (700g)">
+                            <h3>Gomita La Piñata Redonditas (700g)</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomita La Piñata Redonditas (700g)">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomita huesos la piñata.jpeg" alt="Gomita La Piñata Huesos (700g)">
+                            <h3>Gomita La Piñata Huesos (700g)</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomita La Piñata Huesos (700g)">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomita pete la piñata.jpeg" alt="Gomita La Piñata Pete (700g)">
+                            <h3>Gomita La Piñata Pete (700g)</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomita La Piñata Pete (700g)">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomita eucalipto la piñata.jpeg" alt="Gomita La Piñata Eucalipto (700g)">
+                            <h3>Gomita La Piñata Eucalipto (700g)</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4000">Bolsa - $4,000</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomita La Piñata Eucalipto (700g)">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/regaliz xtreme rainbow.jpeg" alt="Regaliz Xtreme Rainbow">
+                            <h3>Regaliz Xtreme Rainbow</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="caja" data-precio="6700">Caja - $6,700</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Regaliz Xtreme Rainbow">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomitas dori bananitas.jpeg" alt="Gomitas Dori Bananitas">
+                            <h3>Gomitas Dori Bananitas</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="caja" data-precio="4600">Caja - $4,600</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomitas Dori Bananitas">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomitas dori gusanitos.jpeg" alt="Gomitas Dori Gusanitos">
+                            <h3>Gomitas Dori Gusanitos</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomitas Dori Gusanitos">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img src="img/gomitas dori pelotitas.jpeg" alt="Gomitas Dori Bolitas De Colores">
+                            <h3>Gomitas Dori Bolitas De Colores</h3>
+                            <div class="opciones-compra">
+                                <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                    <option value="bolsa" data-precio="4600">Bolsa - $4,600</option>
+                                </select>
+                                <button class="agregar-carrito" data-nombre="Gomitas Dori Bolitas De Colores">
+                                    <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                    <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                </section>
+             </main>
+              <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <div id="pago-mercado-pago" class="pago-mercado-pago">
+            <button id="boton-pagar">
+                <i class="fas fa-wallet"></i> Pagar con Mercado Pago
+            </button>
+            <button id="enviar-whatsapp" class="boton-whatsapp">
+                <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

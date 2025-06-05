@@ -1,0 +1,1280 @@
+/* ===== Estilos Generales ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD700; /* Color amarillo */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #eb1c24;
+    color: #fff;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+ /* Contenedor del logo */
+.logo-container {
+    position: absolute; /* Posiciona el logo en el centro */
+    left: 50%; /* Lo mueve al 50% del ancho del header */
+    transform: translateX(-50%); /* Lo centra exactamente */
+}
+.logo-container img {
+    height: auto;
+    width: 50px;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Navegación principal (Inicio y Contacto) */
+.nav-principal {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-right: auto; /* Empuja el menú a la izquierda */
+}
+
+.nav-principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-principal a:hover {
+    color: #FFD700;
+}
+
+.nav-principal i {
+    margin-right: 5px;
+}
+
+/* Navegación del carrito */
+.nav-carrito a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    margin-left: auto; /* Empuja el carrito a la derecha */
+}
+
+.nav-carrito a:hover {
+    color: #FFD700;
+}
+
+.nav-carrito i {
+    margin-right: 5px;
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Mostrar el ícono de hamburguesa solo en dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Mantén los elementos en una fila */
+        justify-content: space-between; /* Distribuye el espacio entre los elementos */
+        align-items: center;
+        padding: 10px 20px; /* Ajusta el padding para móviles */
+    }
+
+    .menu-hamburguesa {
+        display: block; /* Mostrar en dispositivos móviles */
+        order: 1;
+    }
+
+    .logo-container {
+        position: static; /* Quita el posicionamiento absoluto */
+        transform: none; /* Quita la transformación */
+        order: 2; /* Coloca el logo en el centro */
+        text-align: center; /* Centra el logo */
+        flex: 1; /* Ocupa el espacio restante */
+    }
+
+    .nav-carrito {
+        order: 3; /* Coloca el carrito a la derecha */
+    }
+
+    .nav-principal {
+        display: flex; /* Cambia a flex para que se pueda animar */
+        flex-direction: column;
+        position: fixed; /* Fija el menú en la pantalla */
+        top: 0;
+        left: 0;
+        width: 250px; /* Ancho de la barra lateral */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background-color: #ed1b24; /* Fondo del menú */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+        z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
+        transform: translateX(-100%); /* Oculta el menú fuera de la pantalla */
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+
+    .nav-principal.mostrar {
+        transform: translateX(0); /* Muestra el menú deslizándolo hacia adentro */
+    }
+
+    .nav-principal a {
+        padding: 10px 20px; /* Espaciado para los enlaces */
+        border-bottom: 1px solid #FFD700; /* Separador entre enlaces */
+        text-align: left; /* Alinea el texto a la izquierda */
+        color: #FFD700; /* Color del texto */
+        text-decoration: none; /* Quitar subrayado */
+    }
+
+    .nav-principal a:hover {
+        background-color: #ed1b24; /* Efecto hover */
+    }
+}
+
+/* ===== Main ===== */
+/* Sección de bienvenida */
+.bienvenida {
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    
+}
+
+.bienvenida h1 {
+    font-size: 2.5em;
+    color: #ed1b24;
+    margin-bottom: 20px;
+}
+
+.bienvenida .frase-llamativa {
+    font-size: 1.5em;
+    color: #333;
+    font-style: italic;
+}
+
+/* Sección de categorías */
+.categorias {
+    text-align: center;
+    padding: 20px 20px; /* Reducir el padding superior e inferior */
+    margin-top: -40px; /* Mover la sección hacia arriba */
+}
+
+.categorias h2 {
+    color: #ed1b24;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.contenedor-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.categoria {
+    background-color: #eb1c24;                               
+    color: #FFD700;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-categoria img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.categoria:hover .imagen-categoria img {
+    transform: scale(1.1);
+}
+
+.categoria span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* ===== Carrito de compras ===== */
+/* Estilo para mostrar el carrito */
+.carrito {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: #eb1c24;
+    border-left: 1px solid #eb1c24;
+    color: #FFD700;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.carrito.mostrar {
+    transform: translateX(0);
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#vaciar-carrito {
+    background-color: #FFD700; /* Color amarillo */
+    color: #333; /* Color de texto oscuro para mejor contraste */
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#vaciar-carrito:hover {
+    background-color: #e6c200; /* Un tono más oscuro de amarillo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+#vaciar-carrito:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+
+.cerrar-carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+}
+
+.cerrar-carrito:hover {
+    color: #333
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    margin-top: 0;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+
+/* ===== Botón flotante de WhatsApp ===== */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+
+/* ===== Nuevos estilos para la página de golosinas ===== */
+.filtros {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.filtros h2 {
+    color: #eb1c24;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.botones-filtro {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.boton-filtro {
+    background-color: #eb1c24;
+    color: #FFD700;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-filtro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icono-categoria img {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.boton-filtro:hover .icono-categoria img {
+    transform: scale(1.1);
+}
+
+.boton-filtro span {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .botones-filtro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boton-filtro {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+/* ===== Estilos para las páginas de golosinas ===== */
+
+/* Buscador de productos */
+.buscador {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.buscador input[type="text"] {
+    width: 70%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.buscador button {
+    padding: 10px 20px;
+    background-color: #eb1c24;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.buscador button:hover {
+    background-color: #c82333;
+}
+
+.buscador button i {
+    margin-right: 5px;
+}
+
+/* Sección de productos */
+.productos {
+    padding: 20px;
+    text-align: center;
+}
+
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background-color: #eb1c24;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 1.2em;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.opciones-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selector-tipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.selector-tipo label {
+    font-size: 0.9em;
+    color: #FFD700;
+}
+
+.selector-tipo select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.opcion-compra {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.agregar-carrito {
+    background-color: #00a24e;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.agregar-carrito:hover {
+    background-color: #00a24e 
+}
+
+.agregar-carrito:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.agregar-carrito i {
+    font-size: 1.2em;
+}
+
+/* ===== Estilos para la página de Contacto ===== */
+
+/* Sección de contacto */
+.contacto {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contacto h2 {
+    font-size: 2em;
+    color: #eb1c24;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Información de contacto */
+.info-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-item {
+    background-color: #eb1c24;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-item i {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.info-texto h3 {
+    font-size: 1.2em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.info-texto p {
+    font-size: 1em;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes-sociales a {
+    color: #FFD700;
+    font-size: 1.2em; /* Ajusté el tamaño de los íconos */
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #FFD700;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .info-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto h2 {
+        font-size: 1.5em;
+    }
+
+    .contacto p {
+        font-size: 1em;
+    }
+
+    .info-item {
+        width: 100%;
+    }
+}
+/* Animación del checkmark */
+.agregar-carrito.animacion-checkmark .fa-cart-plus {
+    display: none; /* Oculta el ícono del carrito */
+}
+
+.agregar-carrito.animacion-checkmark .fa-check {
+    display: inline-block; /* Muestra el ícono de checkmark */
+    animation: checkmark 0.5s ease;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.agregar-carrito .fa-check {
+    display: none; /* Oculta el ícono de checkmark por defecto */
+    /* Estilo para ocultar el carrito */
+.carrito.oculto {
+    display: none;
+}
+
+/* Estilo para mostrar el carrito */
+.carrito {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.carrito.mostrar {
+    transform: translateX(0);
+}
+}
+/* Estilo para el botón de eliminar */
+.eliminar-producto {
+    background-color: #eb1c24; /* Color rojo */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.eliminar-producto:hover {
+    background-color: #eb1c24; /* Color rojo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.eliminar-producto:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+.eliminar-producto i {
+    font-size: 1em; /* Tamaño del ícono */
+}
+/* ===== Animaciones para los íconos ===== */
+
+/* Ícono de contacto (sobre) */
+.fa-envelope:hover {
+    animation: bounce 0.5s ease infinite; /* Rebote */
+    color: #FFD700; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono del carrito (sobre) */
+.fa-shopping-cart:hover {
+    animation: spin 1s linear infinite; /* Rotación */
+    color: #FFD700; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono de WhatsApp (sobre) */
+.fa-whatsapp:hover {
+    animation: pulse 1s ease infinite; /* Pulso */
+    color: #25D366; /* Cambio de color al pasar el mouse */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Efecto adicional para los íconos de categorías */
+.imagen-categoria img:hover {
+    animation: float 2s ease-in-out infinite; /* Flotar */
+}
+
+/* Animación de flotar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* ===== Animaciones para las imágenes ===== */
+
+/* Efecto de escalado al pasar el mouse */
+.icono-categoria img:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de rotación al pasar el mouse */
+.icono-categoria img.rotar:hover {
+    animation: rotate 1s linear infinite; /* Rotación continua */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efecto de flotar al pasar el mouse */
+.icono-categoria img.flotar:hover {
+    animation: float 2s ease-in-out infinite; /* Flotar suavemente */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de cambio de color (filtro sepia) al pasar el mouse */
+.icono-categoria img.sepia:hover {
+    filter: sepia(100%); /* Aplica un filtro sepia */
+    transition: filter 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de borde y sombra al pasar el mouse */
+.icono-categoria img.borde-sombra:hover {
+    border: 3px solid #FFD700; /* Borde dorado */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Sombra dorada */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+/* Estilos específicos para el botón de Gomitas */
+#filtro-gomita {
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Bordes redondeados */
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#filtro-gomita:hover {
+    transform: translateY(-5px); /* Efecto de levitación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+
+#filtro-gomita:active {
+    transform: translateY(0); /* Efecto de clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos específicos para el botón de Regaliz */
+#filtro-regaliz {
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Bordes redondeados */
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#filtro-regaliz:hover {
+    transform: translateY(-5px); /* Efecto de levitación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+
+#filtro-regaliz:active {
+    transform: translateY(0); /* Efecto de clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Animación para el ícono de inicio */
+.nav-principal a[href="index.html"] i.fa-home {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-principal a[href="index.html"]:hover i.fa-home {
+    animation: bounce 0.5s ease infinite;
+    color: #FFD700; /* Cambia el color al pasar el mouse */
+}
+
+/* Definición de la animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+/* ===== Estilos para la página de pago exitoso ===== */
+.pago-exitoso {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-exito {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-exito {
+    font-size: 80px;
+    color: #00a24e; /* Color verde para el ícono de éxito */
+    margin-bottom: 20px;
+    animation: bounce 1s ease infinite; /* Animación de rebote */
+}
+
+.pago-exitoso h1 {
+    font-size: 2.5em;
+    color: #eb1c24; /* Color rojo para el título */
+    margin-bottom: 20px;
+}
+
+.pago-exitoso p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+.boton-inicio {
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-inicio:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de levitación */
+}
+
+/* Animación de rebote para el ícono de éxito */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* ===== Estilos para la página de pago fallido ===== */
+.pago-error {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-error {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-error {
+    font-size: 80px;
+    color: #eb1c24; /* Color rojo para el ícono de error */
+    margin-bottom: 20px;
+    animation: shake 0.5s ease infinite; /* Animación de sacudida */
+}
+
+.pago-error h1 {
+    font-size: 2.5em;
+    color: #eb1c24; /* Color rojo para el título */
+    margin-bottom: 20px;
+}
+
+.pago-error p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+/* Animación de sacudida para el ícono de error */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* ===== Estilos para la página de pago pendiente ===== */
+.pago-pendiente {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-pendiente {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-pendiente {
+    font-size: 80px;
+    color: #007bff; /* Color azul para el ícono de pendiente */
+    margin-bottom: 20px;
+    animation: rotate 2s linear infinite; /* Animación de rotación */
+}
+
+.pago-pendiente h1 {
+    font-size: 2.5em;
+    color: #007bff; /* Color azul para el título */
+    margin-bottom: 20px;
+}
+
+.pago-pendiente p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+/* Animación de rotación para el ícono de pendiente */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}   
+#boton-pagar {
+    background-color: #009ee3; /* Color azul característico de Mercado Pago */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#boton-pagar:hover {
+    background-color: #007bb5; /* Un tono más oscuro de azul al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+#boton-pagar:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+#boton-pagar i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+/* ===== ESTILOS PARA DISPOSITIVOS MÓVILES (768px o menos) ===== */
+@media (max-width: 768px) {
+    /* ... (mantener todos tus otros estilos mobile existentes) ... */
+
+    /* MODIFICACIÓN PRINCIPAL: Grid de 2 columnas fijas */
+    .lista-productos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+        gap: 12px;
+        padding: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .producto {
+        width: 100%; /* Ocupa todo el ancho de la celda del grid */
+        margin: 0; /* Elimina márgenes que podrían afectar el layout */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Ajustes para mantener la proporción de las imágenes */
+    .producto img {
+        width: 100%;
+        height: auto;
+        max-height: 120px;
+        object-fit: contain;
+    }
+
+    /* Textos más legibles */
+    .producto h3 {
+        font-size: 13px;
+        line-height: 1.3;
+        margin: 8px 0;
+        height: 32px; /* Altura fija para uniformidad */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limita a 2 líneas */
+        -webkit-box-orient: vertical;
+    }
+
+    /* Botones y selects adaptados */
+    .opcion-compra, .agregar-carrito {
+        font-size: 12px;
+        padding: 8px 5px;
+        width: 100%;
+    }
+}
+
+/* ===== AJUSTES PARA PANTALLAS MUY PEQUEÑAS (400px o menos) ===== */
+@media (max-width: 400px) {
+    /* Mantenemos 2 columnas incluso en pantallas muy pequeñas */
+    .lista-productos {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .producto h3 {
+        font-size: 11px;
+        height: 28px;
+    }
+
+    .opcion-compra, .agregar-carrito {
+        font-size: 11px;
+        padding: 6px 4px;
+    }
+}
+/* ===== ESTILOS PARA CATEGORÍAS EN MÓVILES ===== */
+@media (max-width: 768px) {
+    .filtros {
+        padding: 15px 10px;
+    }
+
+    .filtros h2 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        color: #ed1b24;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .botones-filtro {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+        justify-items: center;
+    }
+
+    .boton-filtro {
+        background-color: #eb1c24;
+        border-radius: 10px;
+        padding: 15px 10px;
+        width: 100%;
+        max-width: 160px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .boton-filtro:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .icono-categoria {
+        width: 100%;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .icono-categoria img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        background-color: transparent;
+        padding: 5px;
+    }
+
+    .boton-filtro span {
+        font-size: 12px;
+        color: #FFD700;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 5px;
+        line-height: 1.3;
+    }
+}
+
+/* AJUSTES PARA PANTALLAS MUY PEQUEÑAS */
+@media (max-width: 400px) {
+    .botones-filtro {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .boton-filtro {
+        max-width: 100%;
+        padding: 12px;
+    }
+    
+    .icono-categoria img {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* Reemplaza el estilo existente del botón de WhatsApp con este */
+.boton-whatsapp {
+    background-color: #25D366; /* Verde característico de WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Mismo padding que el botón de Mercado Pago */
+    font-size: 16px; /* Mismo tamaño de fuente */
+    font-weight: bold; /* Misma negrita */
+    border-radius: 5px; /* Mismo radio de borde */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Ocupa todo el ancho disponible */
+    width: 100%; /* Mismo ancho que el botón de Mercado Pago */
+    text-align: center; /* Texto centrado */
+    margin-top: 20px; /* Mismo margen superior */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar contenido horizontalmente */
+    gap: 10px; /* Espacio entre ícono y texto */
+}
+
+.boton-whatsapp:hover {
+    background-color: #128C7E; /* Verde más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.boton-whatsapp:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+.boton-whatsapp i {
+    font-size: 1.2em; /* Tamaño del ícono similar al de Mercado Pago */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
